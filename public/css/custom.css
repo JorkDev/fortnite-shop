@@ -238,7 +238,7 @@ main {
 
 .home-content {
   position: absolute;
-  top: 130px;
+  top: 220px;
   left: 100px;
 }
 
@@ -246,6 +246,7 @@ main {
   font-family: "Luckiest Guy", system-ui;
   font-size: 6em;
   color: white;
+  width: 60%;
 }
 
 .home-subtitle {
