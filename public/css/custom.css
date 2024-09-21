@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Passion One", cursive;
+  letter-spacing: 1px;
+  background-color: #2196f3;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  height: 100%;
+}
+
+.top-bar {
+  display: flex;
+  padding: 30px;
+  align-items: center;
+}
+
+.vbucks {
+  display: flex;
+}
+
+.vbuck-icon img {
+  position: relative;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  left: -5px;
+}
+
+.bar-actions {
+  display: flex;
+}
+
+.bar-actions a {
+  background-color: #0d47a1;
+  border: 3px solid #1565c0;
+  padding: 5px 15px;
+  text-decoration: none;
+  color: #90caf9;
+  font-size: 22px;
+  font-weight: 500;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.bar-actions a:last-child {
+  margin-right: 0;
+}
+
+.menu {
+  margin: 0 auto;
+  display: flex;
+}
+
+.menu a {
+  background-color: #0c48a0;
+  color: #90caf9;
+  text-decoration: none;
+  padding: 5px 15px;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover,
+.bar-actions a:hover {
+  background-color: #1976d2;
+}
+
+.menu a.active {
+  background-color: white;
+  color: #0d47a1;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.store {
+  padding: 0 30px;
+  flex: 1;
+  display: flex;
+}
+
+.store-big {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
+.store-section-info {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.store-section-info h1 {
+  color: white;
+  font-size: 35px;
+  background-color: #2396f3;
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  padding-right: 10px;
+}
+
+.store-section-info:after {
+  content: "";
+  width: 100%;
+  background-color: #64b5f6;
+  height: 3px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.store-items {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  width: calc(33.333% - 20px); /* Three columns */
+  border: 3px solid black;
+  position: relative;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 0 0px #ffeb3b;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card:hover {
+  box-shadow: 0 0 0 5px #ffeb3b;
+  transform: scale(1.05);
+}
+
+.card .card-body {
+  margin-top: auto;
+  backdrop-filter: blur(3px);
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.38);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card .card-body h3 {
+  color: #dcefff;
+  font-size: 30px;
+}
+
+.card .card-body p {
+  font-family: "Roboto", sans-serif;
+  color: #8e8e8e;
+  margin-top: 5px;
+}
+
+.card .card-footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
+  color: white;
+  background-color: #09224a;
+  position: relative;
+}
+
+.rare {
+  background-color: #0075d2;
+  border-color: #61afff;
+}
+
+.epic {
+  background-color: #784fc1;
+  border-color: #ba9dec;
+}
+
+.common {
+  background-color: #388e3c;
+  border-color: #4caf50;
+}
+
+.layout-section {
+  margin-bottom: 40px;
+}
+
+.layout-section h2 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.bottom-bar {
+  background-color: #08224a;
+  padding: 15px 30px;
+  display: flex;
+}
+
+.bottom-bar a {
+  margin-left: auto;
+  border: 1px solid;
+  color: #acc1de;
+  font-family: "Roboto", sans-serif;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+.bottom-bar a:hover {
+  background-color: #193f75;
+}
+
+.home-content {
+  position: absolute;
+  top: 130px;
+  left: 100px;
+}
+
+.home-title {
+  font-family: "Luckiest Guy", system-ui;
+  font-size: 6em;
+  color: white;
+}
+
+.home-subtitle {
+  font-family: "Passion One", cursive;
+  font-size: 1.2em;
+  color: white;
+  letter-spacing: 2px;
+  margin-top: 0px;
+  width: 60%;
+}
+
+#btn1,
+#btn2 {
+  width: 210px;
+  height: 40px;
+  display: inline-block;
+  background-color: #ffff00;
+  transform: skewX(-15deg);
+  font-family: "Luckiest Guy", system-ui;
+  letter-spacing: 1px;
+  margin-left: 50px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+#btn1:before,
+#btn2:before {
+  content: "COMPRAR";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) skewX(15deg);
+}
+
+#btn2 {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+#btn2:before {
+  content: "IR A DISCORD";
+}
+
+#drop {
+  border-radius: 100%;
+  position: relative;
+  left: 0px;
+  top: 40px;
+  height: 19em;
+  width: 140px;
+  overflow: hidden;
+}
+
+#drop:before,
+#drop:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+#drop:after {
+  background: rgb(52, 152, 219);
+  background: linear-gradient(
+    rgba(52, 255, 255, 1) 0%,
+    rgba(52, 152, 219, 1) 10%,
+    rgba(152, 252, 219, 1) 100%
+  );
+  border-radius: 100% 0 50% 0;
+  left: 0px;
+  bottom: 0;
+  width: inherit;
+  height: 3em;
+  opacity: 0.7;
+  animation: surface 3s linear;
+}

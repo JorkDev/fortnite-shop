@@ -1,0 +1,66 @@
+<h1>Fortnite Shop</h1>
+
+<% for (let layout in groupedShopData) { %>
+<div class="layout-section">
+  <h2><%= layout %></h2>
+  <div class="store-items">
+    <% groupedShopData[layout].forEach(item => { %>
+    <div
+      class="store-item <%= layout === 'Featured' ? 'featured-item' : 'daily-item' %>"
+      style="
+        background-color: <%= item.colors?.textBackgroundColor ? `#${item.colors.textBackgroundColor}` : (item.colors?.color1 ? `#${item.colors.color1}` : '#333') %>;
+      "
+    >
+      <% 
+      let imageUrl = '';
+
+      if (item.tracks && item.tracks[0]?.albumArt) {
+          imageUrl = item.tracks[0].albumArt; // For tracks
+      } else if (item.instruments && item.instruments[0]?.images?.small) {
+          imageUrl = item.instruments[0].images.small; // For instruments
+      } else if (item.brItems && item.brItems[0]?.images?.icon) {
+          imageUrl = item.brItems[0].images.icon; // Emote or other items
+      } else if (item.brItems && item.brItems[0]?.images?.smallIcon) {
+          imageUrl = item.brItems[0].images.smallIcon; // Fallback to smallIcon
+      } else if (item.brItems && item.brItems[0]?.images?.featured) {
+          imageUrl = item.brItems[0].images.featured; // Fallback to featured image
+      } else if (item.newDisplayAsset?.renderImages && item.newDisplayAsset.renderImages[0]?.image) {
+          imageUrl = item.newDisplayAsset.renderImages[0].image; // Fallback to renderImages
+      } else {
+          imageUrl = '/placeholder.jpg'; // Default placeholder
+      }
+
+      let cleanedDevName = item.devName
+          .replace(/^\[VIRTUAL\]1 x /, '')      // Remove the "[VIRTUAL]1 x " from the start
+          .replace(/ for \d+ MtxCurrency$/, ''); // Remove " for x coins MtxCurrency" from the end
+      %>
+
+      <!-- Display the item image and details -->
+      <img src="<%= imageUrl %>" alt="<%= cleanedDevName %>" />
+      <div class="store-item-details">
+        <h3><%= cleanedDevName %></h3>
+        <p>Price: <%= item.finalPrice %> V-Bucks</p>
+
+        <% if (item.tracks) { %>
+        <p>Track Title: <%= item.tracks[0]?.title %></p>
+        <p>Artist: <%= item.tracks[0]?.artist %></p>
+        <% } else if (item.instruments) { %>
+        <p>Instrument Name: <%= item.instruments[0]?.name %></p>
+        <p>Description: <%= item.instruments[0]?.description %></p>
+        <% } else if (item.brItems && item.brItems[0]?.type?.displayValue === 'Gesto') { %>
+        <p>Emote Name: <%= item.brItems[0]?.name %></p>
+        <p>Description: <%= item.brItems[0]?.description %></p>
+        <% } else { %>
+        <p>Type: <%= item.brItems && item.brItems[0]?.type?.displayValue || 'Unknown' %></p>
+        <% } %>
+      </div>
+      <div class="store-item-price">
+        $ <%= item.finalPrice %>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+<% } %>
+
+<p class="info-section">These items are cosmetic only.</p>

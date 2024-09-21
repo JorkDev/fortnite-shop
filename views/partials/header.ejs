@@ -1,0 +1,27 @@
+<header class="top-bar">
+  <div class="bar-actions">
+    <a href="#">
+      <i class="fa fa-user-plus"></i>
+    </a>
+  </div>
+  <div class="menu">
+    <!-- Dynamic links with the active class based on the 'activePage' variable -->
+    <a href="/" class="<%= activePage === 'home' ? 'active' : '' %>">INICIO</a>
+    <a href="/battle-pass" class="<%= activePage === 'battle-pass' ? 'active' : '' %>">PASE DE BATALLA</a>
+    <a href="/news" class="<%= activePage === 'news' ? 'active' : '' %>">NOVEDADES</a>
+    <a href="/shop" class="<%= activePage === 'shop' ? 'active' : '' %>">TIENDA</a>
+    <a href="/vbucks" class="<%= activePage === 'vbucks' ? 'active' : '' %>">PAVOS</a>
+    <a href="/purchases" class="<%= activePage === 'purchases' ? 'active' : '' %>">MIS COMPRAS</a>
+  </div>
+  <div class="bar-actions">
+    <a class="vbucks" href="#">
+      <div class="vbuck-icon">
+        <img src="https://fortnite-api.com/images/vbuck.png" alt="" />
+      </div>
+      500
+    </a>
+    <a href="#">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</header>
